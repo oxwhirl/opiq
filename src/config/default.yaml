@@ -1,0 +1,118 @@
+# -- Default Config --
+name: "count_explore"
+
+# RL Stuff
+gamma: 0.99
+
+# Environment
+env: "CartPole-v1"
+num_actions: 1
+state_shape: (4,)
+
+# Agent
+agent: "tiny" # The network to use
+past_frames_input: 1
+
+# Action selection
+epsilon_start: 1
+epsilon_finish: 0.05
+epsilon_time_length: 10000
+action_selector: "eps_greedy"
+
+# Buffer
+buffer_size: 10000
+training_iters: 1
+buffer_burn_in: 0
+
+# Training
+trainer: "DQN"
+double_q: False
+n_step: 1
+batch_size: 32
+target_update_interval: 1000
+lr: 0.0005
+clip_grad_norm: 5
+reward_clipping: True
+update_freq: 1
+
+atari_rms: False
+
+mmc: False
+mmc_beta: 0.1
+
+# Pseudocounts
+count_rewards: False
+count_state_only_rewards: False
+recompute_count_rewards: True
+count_beta: 0.1
+count_size: 9
+count_state_action: True
+
+# Atari Count
+atari_count: False
+atari_target_x: 8
+atari_target_y: 11
+
+# RND Network Distill
+rnd_net_count: False
+rnd_net_scaler: 0.1
+rnd_rep_size: 64
+rnd_net_name: "fc"
+rnd_optim_m: 1
+rnd_batch_size: 32
+rnd_train_p: 1
+rnd_same_starts: False
+rnd_train_times: -1
+
+# Dora
+dora_count: False
+dora_name: "maze"
+dora_beta: 0.1
+dora_action: 0.1
+
+# Bootstrap Prior
+bsp: False
+bsp_k: 10
+bsp_grad_norm: True
+bsp_p: 1
+bsp_beta: 1
+
+# Optimistic Action Selection and Bootstrapping
+optim_m: 0.5
+optim_action_tau: 0.1
+optim_bootstrap: False
+optim_bootstrap_tau: 0.1
+optim_interpolation: False
+
+# Subtract reward baseline
+reward_baseline: 0
+
+# Set bias of final layer baseline
+final_layer_bias: -1
+
+# Timing
+t_max: 50000
+episode_limit: -1
+
+# Testing
+testing_interval: 1000
+test_episodes: 32
+test_epsilon: 0
+test_augmented: False
+
+# Render
+render_test_env: False
+render_train_env: False
+render_scaling: 2
+
+# Logging stuff
+save_count_gifs: -1
+
+# Logging
+log_interval: 1000
+tb: False
+save: False
+mongo: False
+config_file: "default"
+repeat_id: 1
+label: "no_label"
