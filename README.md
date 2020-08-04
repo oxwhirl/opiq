@@ -14,7 +14,7 @@ To run OPIQ on the Maze:
 
 Montezuma:
 
-`bash run.sh 0 python3 src/main.py with t_max=13050000 env=Montezuma-v0 past_frames_input=4 agent=atari batch_size=32 update_freq=4 epsilon_time_length=1000000 epsilon_finish=0.01 test_epsilon=0.01 test_episodes=5 testing_interval=100000 log_interval=50000 count_rewards=True count_beta=0.01 atari_count=True recompute_count_rewards=True n_step=3 buffer_size=1000000 double_q=False count_state_only_rewards=False save=True reward_clipping=True target_update_interval=8000 gamma=0.99 mmc=True name=OPIQ action_selector=optimistic_action optim_m=2 optim_action_tau=0.1 mmc_beta=0.01 optim_bootstrap=True optim_bootstrap_tau=0.01  label=montezuma_opiq`
+`bash run.sh 0 python3 src/main.py with t_max=13050000 env=Montezuma-v0 past_frames_input=4 agent=atari batch_size=32 update_freq=4 epsilon_time_length=1000000 epsilon_finish=0.01 test_epsilon=0.01 test_episodes=5 testing_interval=100000 log_interval=50000 count_rewards=True count_beta=0.1 atari_count=True recompute_count_rewards=True n_step=3 buffer_size=1000000 double_q=False count_state_only_rewards=False save=True reward_clipping=True target_update_interval=8000 gamma=0.99 mmc=True name=OPIQ action_selector=optimistic_action optim_m=2 optim_action_tau=0.1 mmc_beta=0.01 optim_bootstrap=True optim_bootstrap_tau=0.01  label=montezuma_opiq`
 
 The config file `default.yaml` in src/config contains all the possible flags/hyperparameters.
 Sorry about the lack of documentation and general messiness of the code, if you have any questions don't hesitate to raise an issue or send me an email: [tabish.rashid@cs.ox.ac.uk](mailto:tabish.rashid@cs.ox.ac.uk).
